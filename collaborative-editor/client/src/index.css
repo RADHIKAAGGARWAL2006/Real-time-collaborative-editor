@@ -1,0 +1,38 @@
+/* File: client/src/index.css */
+
+/* 1. The blinking cursor line of other users */
+.ProseMirror .yjs-cursor {
+  position: relative;
+  margin-left: -1px;
+  margin-right: -1px;
+  border-left: 2px solid black; /* This color gets overridden dynamically by Yjs */
+  word-break: normal;
+  pointer-events: none;
+}
+
+/* 2. The floating name tag above the cursor */
+.ProseMirror .yjs-cursor > div {
+  position: absolute;
+  top: -1.05em;
+  left: -1px;
+  font-size: 13px;
+  font-family: sans-serif;
+  background-color: black; /* Overridden dynamically */
+  color: white;
+  border-radius: 4px 4px 4px 0;
+  padding: 2px 6px;
+  white-space: nowrap;
+  opacity: 0;
+  transition: opacity 0.2s ease-in-out;
+}
+
+/* 3. Show the name tag when someone is actively typing or hovering */
+.ProseMirror .yjs-cursor:hover > div,
+.ProseMirror .yjs-cursor.active > div {
+  opacity: 1;
+}
+
+/* Fixes default outline behavior when you click the editor */
+.ProseMirror:focus {
+  outline: none;
+}

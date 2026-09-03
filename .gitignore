@@ -1,0 +1,13 @@
+# Ignore Node Modules in all folders
+node_modules/
+
+# Ignore the Vite build output
+dist/
+dist-ssr/
+
+# Ignore local environment variables
+.env
+.env.local
+
+# CRITICAL: Ignore the LevelDB binary database folder
+database-storage/
